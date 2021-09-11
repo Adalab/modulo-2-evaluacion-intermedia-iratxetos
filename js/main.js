@@ -20,42 +20,50 @@ console.log('El numero aleatorio es ' + randomNumber);
 console.log(randomNumber);
 
 // Tomar el número del input
-function BringInputValue() {
-
+function bringInputValue() {
   const number = inputNumber.value;
   console.log(number);
-  
-  if( number == randomNumber ) {
+
+  if (number === randomNumber) {
     trackTest.innerHTML = ("Has ganado campeona!!!");
   }
 
-  else if( number > 101) {
+  else if (number === '') {
+    trackTest.innerHTML = ("Escribe un número, chavala");
+  }
+
+  else if (number > 100) {
     trackTest.innerHTML = ("El número debe estar entre 0 y 100");
   }
 
-  else if( number > randomNumber ) {
+  else if (number < 1) {
+    trackTest.innerHTML = ("El número debe estar entre 0 y 100");
+  }
+
+  else if (number > randomNumber) {
     trackTest.innerHTML = ("Demasiado alto");
   }
-  else if( number < randomNumber) {
+
+  else if (number < randomNumber) {
     trackTest.innerHTML = ("Demasiado bajo");
   }
-  
+
+
   return number;
 }
 
 // Contar número
-function CounterNumber(){
-  console.count();
-  count= count+1;
-  counter.innerHTML = ("Número de intentos: "+ count);
+function counterNumber() {
+  count = count + 1;
+  counter.innerHTML = ("Número de intentos: " + count);
   return count;
 }
 
 //EVENTO
-function handleClickBtn( event ){
+function handleClickBtn(event) {
   event.preventDefault();
-  BringInputValue();
-  CounterNumber();
+  bringInputValue();
+  counterNumber();
 }
 
 btn.addEventListener("click", handleClickBtn);
