@@ -1,7 +1,7 @@
 'use strict';
 // VARIABLES:
 const inputNumber = document.querySelector('.js-input');
-const trackTest = document.querySelector('.js-track');
+let trackTest = document.querySelector('.js-track');
 const counter = document.querySelector('.js-counter');
 const btn = document.querySelector('.js-btn');
 const maxNumber = 100;
@@ -21,7 +21,7 @@ console.log(randomNumber);
 
 // Tomar el número del input
 function bringInputValue() {
-  const number = inputNumber.value;
+  const number = parseInt(inputNumber.value);
   console.log(number);
 
   if (number === randomNumber) {
@@ -46,6 +46,9 @@ function bringInputValue() {
 
   else if (number < randomNumber) {
     trackTest.innerHTML = ("Demasiado bajo");
+  }
+  else {
+    trackTest.innerHTML = 'El valor introducido debe ser un número entre 1 y 100'
   }
 
 
