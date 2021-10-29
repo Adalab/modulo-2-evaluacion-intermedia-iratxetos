@@ -10,24 +10,24 @@ let count = 0;
 
 
 // FUNCIONES
-// Generar número random
+//GENERAR NÚMERO RANDOM
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 const randomNumber = getRandomNumber(maxNumber);
 
-// Escribir en la consola número random
+// ESCRIBIR EN LA CONSOLA EL NÚMERO RANDOM
 console.log('El numero aleatorio es ' + randomNumber);
 console.log(randomNumber);
 
-// Tomar el número del input
+// TOMAR EL NÚMERO DEL INPUT
 function bringInputValue() {
   const number = parseInt(inputNumber.value);
   console.log(number);
 
   if (number === randomNumber) {
     trackTest.innerHTML = ("¡Has ganado campeona 🥳!");
-    container.innerHTML += "<img class='fireworks' src=(../images/fireworks.gif)/>";
+
   }
 
   else if (number === '') {
@@ -52,12 +52,10 @@ function bringInputValue() {
   else {
     trackTest.innerHTML = "Debes escribir un número entre 1 y 100 😠"
   }
-
-
   return number;
 }
 
-// Contar número
+// CONTADOR
 function counterNumber() {
   count = count + 1;
   counter.innerHTML = ("Número de intentos: " + count);
