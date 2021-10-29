@@ -3,6 +3,7 @@
 const inputNumber = document.querySelector('.js-input');
 let trackTest = document.querySelector('.js-track');
 const counter = document.querySelector('.js-counter');
+const container = document.querySelector('.js-container');
 const btn = document.querySelector('.js-btn');
 const maxNumber = 100;
 let count = 0;
@@ -25,30 +26,31 @@ function bringInputValue() {
   console.log(number);
 
   if (number === randomNumber) {
-    trackTest.innerHTML = ("Has ganado campeona!!!");
+    trackTest.innerHTML = ("¡Has ganado campeona 🥳!");
+    container.innerHTML += "<img class='fireworks' src=(../images/fireworks.gif)/>";
   }
 
   else if (number === '') {
-    trackTest.innerHTML = ("Escribe un número, chavala");
+    trackTest.innerHTML = ("Escribe un número, chavala 😒");
   }
 
   else if (number > 100) {
-    trackTest.innerHTML = ("El número debe estar entre 0 y 100");
+    trackTest.innerHTML = ("El número debe estar entre 0 y 100 🤨");
   }
 
   else if (number < 1) {
-    trackTest.innerHTML = ("El número debe estar entre 0 y 100");
+    trackTest.innerHTML = ("El número debe estar entre 0 y 100 🤨");
   }
 
   else if (number > randomNumber) {
-    trackTest.innerHTML = ("Demasiado alto");
+    trackTest.innerHTML = ("Demasiado alto 😚");
   }
 
   else if (number < randomNumber) {
-    trackTest.innerHTML = ("Demasiado bajo");
+    trackTest.innerHTML = ("Demasiado bajo 🤪");
   }
   else {
-    trackTest.innerHTML = 'El valor introducido debe ser un número entre 1 y 100'
+    trackTest.innerHTML = "Debes escribir un número entre 1 y 100 😠"
   }
 
 
